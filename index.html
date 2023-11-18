@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" type="text/css" rel = 'stylesheet'>
+	<title>lab-9</title>
+</head>
+<body>
+
+	<div class="page" id="page">	
+		<table id="main">
+             <tr id="row">
+                <td colspan="5"><input id = "out" name="text" type="text"></td>
+             </tr>
+             <tr>
+                <td><button value ='7' type="button" onclick="char(this)">7</button></td>
+                <td><button value ='8' type="button" onclick="char(this)">8</button></td>
+                <td><button value ='9' type="button" onclick="char(this)">9</button></td> 
+                <td><button value ='/' type="button" onclick="sign(this)">/</button></td> 
+                <td><button type="button" onclick="cl(this)">C</button></td> 
+            </tr>
+            <tr>
+                <td><button value ='4' type="button" onclick="char(this)">4</button></td>
+                <td><button value ='5' type="button" onclick="char(this)">5</button></td>
+                <td><button value ='6' type="button" onclick="char(this)">6</button></td> 
+                <td><button value ='*' type="button" onclick="sign(this)">*</button></td> 
+                <td><button type="button" onclick="del()"><-</button></td>
+            </tr>
+            <tr> 
+                <td><button value ='1' type="button" onclick="char(this)">1</button></td>
+                <td><button value ='2' type="button" onclick="char(this)">2</button></td>
+                <td><button value ='3' type="button" onclick="char(this)">3</button></td> 
+                <td><button value ='-' type="button" onclick="sign(this)">-</button></td> 
+                <td rowspan="2"><button id ="eq" type="button" onclick="equal()">=</button></td> 
+            </tr>
+            <tr>
+                <td colspan="2"><button class="zero" value ='0' type="button" onclick="char(this)">0</button></td>
+                <td><button value ='.' type="button" onclick="char(this)">.</button></td> 
+                <td><button value ='+' type="button" onclick="sign(this)">+</button></td>
+            </table>
+        </tr>
+    </div>
+
+	<script src="./script.js"></script>
+</body>
+</html>
