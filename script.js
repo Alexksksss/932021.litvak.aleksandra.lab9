@@ -6,13 +6,19 @@ function char(a){
     if (first != '' && _sign !='')
         second += a.value;
     output.value += a.value;
-
 }
 
+
 function sign(temp){
-    first = document.getElementById('out').value;
-    output.value += temp.value;
-    _sign = temp.value;
+    if (_sign != '' && second=='') {
+        alert('Ошибка ввода: повторение арифметического знака');
+        return;
+    }
+    else {
+        first = document.getElementById('out').value;
+        output.value += temp.value;
+        _sign = temp.value;
+    }
     document.getElementById('out').style.color = 'gray';
 }
 
@@ -20,6 +26,7 @@ function cl(){
     output.value = '';
     first ='';
     second ='';
+    _sign = '';
 }
 
 function del(){
@@ -52,4 +59,5 @@ function equal(){
         
     first = second;
     second ='';
+    _sign = '';
 }
