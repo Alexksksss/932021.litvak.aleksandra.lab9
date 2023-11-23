@@ -3,8 +3,27 @@ let first = '';
 let second ='';
 let _sign ='';
 function char(a){
-    if (first != '' && _sign !='')
+    if (first != '' && _sign !='') {
+        if (a.value === '.' && second.includes('.')) {
+            alert('Ошибка ввода: нельзя использовать несколько точек подряд');
+            return;
+        }
+        if (a.value === '.' && second.indexOf('.') !== second.lastIndexOf('.')) {
+            alert('Ошибка ввода: нельзя ввести число с несколькими точками');
+            return;
+        }
         second += a.value;
+    } else {
+        if (a.value === '.' && output.value.endsWith('.')) {
+            alert('Ошибка ввода: нельзя использовать несколько точек подряд');
+            return;
+        }
+        if (a.value === '.' && first.indexOf('.') !== first.lastIndexOf('.')) {
+            alert('Ошибка ввода: нельзя ввести число с несколькими точками');
+            return;
+        }
+        first += a.value;
+    }
     output.value += a.value;
 }
 
@@ -13,9 +32,9 @@ function sign(temp){
     if (_sign != '' && second=='') {
         alert('Ошибка ввода: повторение арифметического знака');
         return;
-    }
+    } 
     else {
-        first = document.getElementById('out').value;
+        first = output.value;
         output.value += temp.value;
         _sign = temp.value;
     }
@@ -47,13 +66,13 @@ function equal(){
 
 
     if (_sign === '*') 
-        second = first * second;
+        second = parseFloat(first) * parseFloat(second);
     else if (_sign === '/') 
-        second = first / second;
+        second = parseFloat(first) / parseFloat(second);
     else if (_sign === '+')
-        second = Number(first) + Number(second);
+        second = parseFloat(first) + parseFloat(second);
     else if (_sign === '-')
-        second = first - second;
+        second = parseFloat(first) - parseFloat(second);
 
     output.value = second;
         
